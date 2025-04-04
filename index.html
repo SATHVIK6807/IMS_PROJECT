@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <h2>Dashboard</h2>
+        <nav>
+            <ul>
+                <li><a href="../index.html" class="active">🏠 Home</a></li>
+                <li><a href="add/add-item.html">➕ Add Item</a></li>
+                <li><a href="view/view-item.html">📦 View Inventory</a></li>
+                <li><a href="analytics/analytics.html">📊 Analytics</a></li>
+                <li><a href="billing/billing.html">🛒 Billing</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard">
+        <section class="analytics">
+            <h2>Inventory Overview</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <h3>Total Items</h3>
+                    <p id="total-items">0</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Total Inventory Value</h3>
+                    <p id="total-value">$0</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Category Distribution</h3>
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="recent-items">
+            <h2>Recently Added Items</h2>
+            <div class="search-filter">
+                <input type="text" id="search" placeholder="🔍 Search items...">
+                <label for="filter">Filter by Category:</label>
+                <select id="filter">
+                    <option value="all">All</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="furniture">Furniture</option>
+                    <option value="stationery">Stationery</option>
+                    
+                </select>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Type</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Added At</th>
+                    </tr>
+                </thead>
+                <tbody id="recent-items-table">
+                    <!-- Items will be loaded here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore-compat.js"></script>
+
+    <!-- JavaScript File -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>

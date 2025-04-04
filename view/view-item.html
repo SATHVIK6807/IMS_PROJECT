@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Dashboard</title>
+    <link rel="stylesheet" href="view.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <h2>Dashboard</h2>
+        <nav>
+            <ul>
+                <li><a href="../index.html">🏠 Home</a></li>
+                <li><a href="../add/add-item.html">➕ Add Item</a></li>
+                <li><a href="../view/view-item.html" class="active">📦 View Inventory</a></li>
+                <li><a href="../analytics/analytics.html">📊 Analytics</a></li>
+                <li><a href="../billing/billing.html">🛒 Billing</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h2>Inventory Items</h2>
+
+        <!-- Filter Dropdown -->
+        <div class="filter-container">
+            <label for="filter">Filter by Category:</label>
+            <select id="filter">
+                <option value="all">All</option>
+                <option value="electronics">Electronics</option>
+                <option value="furniture">Furniture</option>
+                <option value="stationery">Stationery</option>
+            </select>
+        </div>
+
+        <!-- Inventory Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Price ($)</th>
+                    <th>Added At</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="inventory-table">
+                <!-- Items will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </main>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-firestore-compat.js"></script>
+
+    <!-- JavaScript File -->
+    <script src="view-item.js"></script>
+
+</body>
+</html>

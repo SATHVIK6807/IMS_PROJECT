@@ -1,0 +1,258 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    background: #F8F9FA;
+    min-height: 100vh;
+    transition: background 0.3s ease-in-out;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    background: #1B263B;
+    color: white;
+    padding: 20px;
+    min-height: 100vh;
+    transition: width 0.3s ease-in-out;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar:hover {
+    width: 270px;
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    padding: 12px;
+    display: block;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+    background: #415A77;
+    transform: translateX(8px);
+}
+
+.sidebar nav ul li a::before {
+    content: "➤";
+    position: absolute;
+    left: -15px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar nav ul li a:hover::before {
+    opacity: 1;
+    left: 5px;
+}
+
+/* MAIN CONTENT */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* FADE-IN ANIMATION */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h2 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #1B263B;
+    margin-bottom: 20px;
+}
+
+/* FILTER */
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 500;
+    font-size: 16px;
+    color: #1B263B;
+}
+
+#filter {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #778DA9;
+    background: #F8F9FA;
+    width: 200px;
+    transition: all 0.3s ease-in-out;
+}
+
+#filter:focus {
+    border-color: #415A77;
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(65, 90, 119, 0.5);
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+th {
+    background: #415A77;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #E0E1DD;
+    color: #1B263B;
+}
+
+tr:nth-child(even) {
+    background: #F8F9FA;
+}
+
+/* HOVER EFFECT ON ROWS */
+tr:hover {
+    background: #E0E1DD;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ACTION BUTTONS */
+.action-btn {
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+/* BUTTON HOVER BOUNCE EFFECT */
+.action-btn:hover {
+    transform: scale(1.05);
+}
+
+.edit-btn {
+    background: #1B263B;
+    color: white;
+    margin-right: 5px;
+}
+
+.edit-btn:hover {
+    background: #415A77;
+}
+
+.delete-btn {
+    background: #B22222;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #8B0000;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 900px) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    .filter-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    .action-btn {
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .sidebar nav ul li {
+        display: inline;
+        margin-right: 10px;
+    }
+
+    .sidebar nav ul li a {
+        display: inline-block;
+        padding: 8px 12px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+}

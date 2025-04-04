@@ -1,0 +1,159 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: #F8F9FA;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #1B263B;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 10px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar nav ul li a:hover {
+    background: #415A77;
+}
+
+/* MAIN CONTENT */
+.edit-container {
+    margin-left: 270px; /* Adjust based on sidebar width */
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* HEADINGS */
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1B263B;
+    margin-bottom: 20px;
+}
+
+/* LABELS */
+label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1B263B;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* INPUT FIELDS */
+input, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #778DA9;
+    background: #F8F9FA;
+    margin-bottom: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus, select:focus {
+    border-color: #415A77;
+    outline: none;
+    box-shadow: 0px 0px 10px rgba(65, 90, 119, 0.5);
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: #1B263B;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #415A77;
+}
+
+/* STATUS MESSAGE */
+#status-message {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #1B263B;
+    font-weight: 500;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    .edit-container {
+        margin-left: 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .edit-container {
+        margin-left: 0;
+        width: 90%;
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,222 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: #F8F9FA;
+    transition: background 0.3s ease-in-out;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #1B263B;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: width 0.3s ease-in-out;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar:hover {
+    width: 270px;
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 12px;
+    display: block;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+    background: #415A77;
+    transform: translateX(8px);
+}
+
+.sidebar nav a::before {
+    content: "➤";
+    position: absolute;
+    left: -15px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar nav a:hover::before {
+    opacity: 1;
+    left: 5px;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    margin-left: 270px;
+    width: 100%;
+    padding: 40px;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* FADE-IN ANIMATION */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HEADINGS */
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1B263B;
+    margin-bottom: 20px;
+}
+
+/* ANALYTICS CONTAINER */
+.analytics-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* ANALYTICS BOX */
+.analytics-box {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.analytics-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* BOUNCE EFFECT */
+.analytics-box:hover {
+    animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* ANALYTICS LIST */
+.analytics-list {
+    list-style: none;
+    padding: 0;
+}
+
+.analytics-list li {
+    padding: 8px;
+    background: #F8F9FA;
+    border-left: 4px solid #415A77;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: background 0.3s ease-in-out;
+}
+
+.analytics-list li:hover {
+    background: #E0E1DD;
+}
+
+/* INVENTORY VALUE DISPLAY */
+.value-display {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1B263B;
+    padding: 10px;
+    background: #E0E1DD;
+    border-radius: 6px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.value-display:hover {
+    background: #D6D8D7;
+    transform: scale(1.05);
+}
+
+/* CHARTS */
+canvas {
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    .main-content {
+        margin-left: 220px;
+    }
+
+    .analytics-box {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .analytics-box {
+        max-width: 100%;
+    }
+}

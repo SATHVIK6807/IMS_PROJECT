@@ -1,0 +1,250 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: #F8F9FA;
+    transition: background 0.3s ease-in-out;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #1B263B;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+    transition: width 0.3s ease-in-out;
+}
+
+.sidebar:hover {
+    width: 270px;
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 10px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 12px;
+    display: block;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.sidebar nav ul li a:hover,
+.sidebar nav ul li a.active {
+    background: #415A77;
+    transform: translateX(8px);
+}
+
+/* MAIN CONTENT */
+.billing-container {
+    margin-left: 270px;
+    width: 100%;
+    max-width: 700px;
+    padding: 40px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 50px;
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: slideIn 0.5s ease-in-out forwards;
+}
+
+/* SLIDE-IN ANIMATION */
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HEADINGS */
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1B263B;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 20px;
+    color: #415A77;
+    margin-bottom: 15px;
+}
+
+/* LABELS */
+label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1B263B;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* INPUT FIELDS */
+input, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #778DA9;
+    background: #F8F9FA;
+    margin-bottom: 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus, select:focus {
+    border-color: #415A77;
+    outline: none;
+    box-shadow: 0px 0px 12px rgba(65, 90, 119, 0.5);
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background: #1B263B;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* BUTTON BOUNCE EFFECT */
+button:hover {
+    background: #415A77;
+    transform: scale(1.05);
+}
+
+/* CART TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #778DA9;
+    transition: all 0.3s ease-in-out;
+}
+
+th {
+    background: #415A77;
+    color: white;
+}
+
+td {
+    background: #F8F9FA;
+}
+
+/* HOVER EFFECT ON TABLE ROWS */
+tr:hover {
+    background: #E0E1DD;
+    transition: all 0.3s ease-in-out;
+}
+
+/* DELETE BUTTON IN CART */
+td button {
+    padding: 5px 10px;
+    font-size: 12px;
+    background: #d9534f;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+td button:hover {
+    background: #c9302c;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+    
+    .billing-container {
+        margin-left: 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .sidebar nav ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .sidebar nav ul li {
+        display: inline;
+    }
+
+    .sidebar nav ul li a {
+        display: inline-block;
+        padding: 10px;
+    }
+
+    .billing-container {
+        margin-left: 0;
+        width: 90%;
+        margin-top: 20px;
+    }
+}
